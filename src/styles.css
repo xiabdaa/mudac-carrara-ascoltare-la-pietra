@@ -460,11 +460,8 @@ a {
 }
 
 .route-visualizer {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
-  gap: clamp(18px, 3vw, 32px);
-  align-items: stretch;
-  padding: clamp(16px, 3vw, 30px) 0;
+  display: block;
+  padding: clamp(18px, 3vw, 34px) 0 clamp(14px, 2vw, 22px);
   border-bottom: 1px solid rgba(29, 23, 20, 0.16);
 }
 
@@ -480,7 +477,11 @@ a {
 
 .map-shell {
   min-width: 0;
-  padding: clamp(14px, 2.4vw, 24px);
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
   animation: mapReveal 420ms ease both;
 }
 
@@ -523,16 +524,19 @@ a {
 
 .map-board {
   position: relative;
-  aspect-ratio: 1000 / 520;
-  min-height: 300px;
-  overflow: hidden;
+  width: min(100%, 1160px);
+  aspect-ratio: 1000 / 420;
+  margin: 0 auto;
+  overflow: visible;
+  background: transparent;
 }
 
-.floor-svg {
+.route-plan-svg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  background: transparent;
 }
 
 .plan-wall,
@@ -564,6 +568,52 @@ a {
 
 .plan-entry {
   fill: rgba(35, 16, 10, 0.9);
+}
+
+.plan-logo-kicker,
+.plan-title,
+.plan-label,
+.plan-room {
+  fill: #211713;
+  font-family: Inter, Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.plan-title {
+  font-size: 22px;
+}
+
+.plan-label {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.plan-room {
+  font-size: 13px;
+}
+
+.plan-drawing {
+  fill: none;
+  stroke: #211713;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+.plan-light,
+.plan-label-line {
+  fill: none;
+  stroke: #211713;
+  stroke-width: 2.4;
+}
+
+.plan-label-line {
+  stroke: rgba(33, 23, 19, 0.28);
+  stroke-dasharray: 5 6;
+}
+
+.plan-square {
+  fill: #211713;
 }
 
 .map-label {
@@ -600,16 +650,16 @@ a {
   left: var(--x);
   top: var(--y);
   display: grid;
-  width: clamp(28px, 3.1vw, 42px);
-  height: clamp(28px, 3.1vw, 42px);
+  width: clamp(18px, 2.1vw, 24px);
+  height: clamp(18px, 2.1vw, 24px);
   place-items: center;
   color: #fffdf8;
-  font-size: clamp(0.62rem, 1.1vw, 0.8rem);
+  font-size: clamp(0.5rem, 0.82vw, 0.64rem);
   font-weight: 900;
-  background: var(--tone);
+  background: #211713;
   border: 0;
-  border-radius: var(--blob);
-  box-shadow: 0 10px 24px rgba(36, 16, 10, 0.18);
+  border-radius: 999px;
+  box-shadow: 0 6px 14px rgba(36, 16, 10, 0.14);
   cursor: pointer;
   transform: translate(-50%, -50%);
   transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
@@ -617,9 +667,9 @@ a {
 
 .map-marker::after {
   position: absolute;
-  inset: -8px;
+  inset: -7px;
   border: 1px solid rgba(35, 16, 10, 0);
-  border-radius: inherit;
+  border-radius: 999px;
   content: "";
   transition: border-color 180ms ease;
 }
@@ -631,8 +681,8 @@ a {
 .map-marker:hover,
 .map-marker[aria-pressed="true"] {
   background: #8b8176;
-  box-shadow: 0 16px 36px rgba(36, 16, 10, 0.22);
-  transform: translate(-50%, -50%) scale(1.14);
+  box-shadow: 0 10px 22px rgba(36, 16, 10, 0.18);
+  transform: translate(-50%, -50%) scale(1.08);
 }
 
 .map-marker[aria-pressed="true"]::after {
@@ -1120,7 +1170,7 @@ a {
   }
 
   .map-shell {
-    padding: 16px 12px 12px;
+    padding: 10px;
   }
 
   .map-head {
@@ -1138,7 +1188,7 @@ a {
   }
 
   .map-board {
-    min-height: 260px;
+    width: min(100%, 540px);
   }
 
   .map-label {
@@ -1146,9 +1196,9 @@ a {
   }
 
   .map-marker {
-    width: 32px;
-    height: 32px;
-    font-size: 0.68rem;
+    width: 18px;
+    height: 18px;
+    font-size: 0.5rem;
   }
 
   .selected-work {
@@ -1251,12 +1301,13 @@ a {
   }
 
   .map-board {
-    aspect-ratio: 1 / 0.92;
+    aspect-ratio: 1000 / 420;
   }
 
   .map-marker {
-    width: 30px;
-    height: 30px;
+    width: 16px;
+    height: 16px;
+    font-size: 0.46rem;
   }
 
   .selected-work {

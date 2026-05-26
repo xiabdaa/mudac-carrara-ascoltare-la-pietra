@@ -233,45 +233,99 @@ function PlanDrawing({ floor }) {
   const isGround = floor === "ground";
 
   return (
-    <svg className="floor-svg" viewBox="0 0 1000 520" aria-hidden="true">
-      <defs>
-        <pattern id={`stone-grid-${floor}`} width="80" height="80" patternUnits="userSpaceOnUse">
-          <path d="M80 0H0V80" fill="none" stroke="rgba(31, 23, 18, 0.035)" strokeWidth="1" />
-        </pattern>
-      </defs>
-      <rect width="1000" height="520" fill={`url(#stone-grid-${floor})`} />
+    <svg className="route-plan-svg" viewBox="0 0 1000 420" aria-hidden="true">
       {isGround ? (
         <>
-          <path className="plan-wall" d="M245 72H720V372H245Z" />
-          <path className="plan-wall" d="M365 118H600V288H365Z" />
-          <path className="plan-wall" d="M720 72H852V372H720" />
-          <path className="plan-wall" d="M245 372H365V438H245Z" />
-          <path className="plan-wall" d="M365 372H600V438H365" />
-          <path className="plan-wall" d="M600 372H852V438H600Z" />
-          <path className="plan-thin" d="M278 95V343" />
-          <path className="plan-thin" d="M704 92V352" />
-          <path className="plan-thin" d="M760 72V372" />
-          <path className="plan-thin" d="M760 145H852M760 210H852M760 285H852" />
-          <path className="plan-thin" d="M305 372v66M330 372v66" />
-          <path className="plan-step" d="M292 385h48M292 398h48M292 411h48M292 424h48" />
-          <path className="plan-break" d="M245 160V230M245 310V350M720 198V264M720 320V360" />
-          <path className="plan-entry" d="M220 338l18 10-18 10z" />
+          <g className="plan-drawing">
+            <path className="plan-wall" d="M245 55H720V295H245Z" />
+            <path className="plan-wall" d="M365 95H600V230H365Z" />
+            <path className="plan-wall" d="M720 55H852V295H720" />
+            <path className="plan-wall" d="M245 295H365V355H245Z" />
+            <path className="plan-wall" d="M365 295H600V355H365" />
+            <path className="plan-wall" d="M600 295H852V355H600Z" />
+            <path className="plan-thin" d="M278 82V270" />
+            <path className="plan-thin" d="M704 76V280" />
+            <path className="plan-thin" d="M760 55V295" />
+            <path className="plan-thin" d="M760 112H852M760 170H852M760 232H852" />
+            <path className="plan-thin" d="M305 295v60M330 295v60" />
+            <path className="plan-step" d="M292 307h48M292 319h48M292 331h48M292 343h48" />
+            <path className="plan-break" d="M245 126V190M245 248V284M720 155V218M720 252V285" />
+            <rect className="plan-square" x="274" y="45" width="12" height="12" />
+            <rect className="plan-square" x="752" y="158" width="12" height="12" />
+            <path className="plan-entry" d="M220 280l18 10-18 10z" />
+          </g>
+          <text className="plan-title" x="500" y="24" textAnchor="middle">PIANO TERRA</text>
+          <text className="plan-label" x="150" y="160" textAnchor="end">
+            <tspan x="150" dy="0">MOSTRE</tspan>
+            <tspan x="150" dy="16">TEMPORANEE</tspan>
+          </text>
+          <path className="plan-label-line" d="M166 165H245" />
+          <text className="plan-label" x="155" y="290" textAnchor="end">RECEPTION</text>
+          <path className="plan-label-line" d="M172 290H245" />
+          <text className="plan-room" x="505" y="325" textAnchor="middle">BAR</text>
+          <text className="plan-room" x="807" y="88" textAnchor="middle">WC</text>
+          <text className="plan-label" x="885" y="192" textAnchor="start">
+            <tspan x="885" dy="0">SALA</tspan>
+            <tspan x="885" dy="16">CONFERENZE</tspan>
+          </text>
+          <path className="plan-label-line" d="M852 198H878" />
+          <text className="entry-arrow" x="315" y="405" textAnchor="middle">↑</text>
         </>
       ) : (
         <>
-          <path className="plan-wall" d="M235 86H720V374H235Z" />
-          <path className="plan-wall" d="M355 142H590V292H355Z" />
-          <path className="plan-wall" d="M720 86H855V374H720" />
-          <path className="plan-wall" d="M235 374H372V444H235Z" />
-          <path className="plan-wall" d="M372 374H855V444H372Z" />
-          <path className="plan-thin" d="M290 118V348" />
-          <path className="plan-thin" d="M700 116V352" />
-          <path className="plan-thin" d="M760 86V374" />
-          <path className="plan-thin" d="M760 154H855M760 240H855M760 312H855" />
-          <path className="plan-thin" d="M312 374v70M340 374v70" />
-          <path className="plan-step" d="M296 389h58M296 403h58M296 417h58M296 431h58" />
-          <path className="plan-break" d="M290 172V244M290 300V350M700 165V225M700 276V352" />
-          <path className="plan-thin" d="M820 58h48M820 72h48" />
+          <g className="plan-drawing">
+            <path className="plan-wall" d="M235 60H720V300H235Z" />
+            <path className="plan-wall" d="M355 108H590V238H355Z" />
+            <path className="plan-wall" d="M720 60H855V300H720" />
+            <path className="plan-wall" d="M235 300H372V360H235Z" />
+            <path className="plan-wall" d="M372 300H855V360H372Z" />
+            <path className="plan-thin" d="M290 92V278" />
+            <path className="plan-thin" d="M700 92V282" />
+            <path className="plan-thin" d="M760 60V300" />
+            <path className="plan-thin" d="M760 116H855M760 185H855M760 247H855" />
+            <path className="plan-thin" d="M312 300v60M340 300v60" />
+            <path className="plan-step" d="M296 312h58M296 325h58M296 338h58M296 351h58" />
+            <path className="plan-break" d="M290 112V190M290 235V284M700 118V174M700 220V286" />
+            <path className="plan-thin" d="M820 32h48M820 46h48" />
+          </g>
+          <text className="plan-title" x="500" y="28" textAnchor="middle">PIANO PRIMO</text>
+          <text className="plan-label" x="170" y="126" textAnchor="end">
+            <tspan x="170" dy="0">DISEGNARE</tspan>
+            <tspan x="170" dy="16">IL MARMO</tspan>
+          </text>
+          <path className="plan-label-line" d="M185 126H290" />
+          <text className="plan-label" x="170" y="190" textAnchor="end">
+            <tspan x="170" dy="0">COLLEZIONE</tspan>
+            <tspan x="170" dy="16">STORICA</tspan>
+            <tspan x="170" dy="16">(1957-1973)</tspan>
+          </text>
+          <path className="plan-label-line" d="M185 197H290" />
+          <text className="plan-label" x="170" y="298" textAnchor="end">
+            <tspan x="170" dy="0">PROJECT</tspan>
+            <tspan x="170" dy="16">ROOM</tspan>
+          </text>
+          <path className="plan-label-line" d="M185 300H235" />
+          <text className="plan-label" x="885" y="118" textAnchor="start">
+            <tspan x="885" dy="0">RESIDENZE</tspan>
+            <tspan x="885" dy="16">D'ARTISTA</tspan>
+          </text>
+          <path className="plan-label-line" d="M855 120H878" />
+          <text className="plan-label" x="885" y="204" textAnchor="start">
+            <tspan x="885" dy="0">OPERE</tspan>
+            <tspan x="885" dy="16">ECCEZIONALI</tspan>
+          </text>
+          <path className="plan-label-line" d="M855 206H878" />
+          <text className="plan-label" x="885" y="272" textAnchor="start">
+            <tspan x="885" dy="0">DISEGNARE</tspan>
+            <tspan x="885" dy="16">IL MARMO</tspan>
+          </text>
+          <path className="plan-label-line" d="M855 274H878" />
+          <text className="plan-label" x="560" y="405" textAnchor="middle">
+            <tspan x="560" dy="0">COLLEZIONE</tspan>
+            <tspan x="560" dy="16">CONTEMPORANEA</tspan>
+          </text>
+          <path className="plan-label-line" d="M560 360V388" />
+          <text className="entry-arrow" x="315" y="410" textAnchor="middle">↑</text>
         </>
       )}
     </svg>
@@ -283,30 +337,12 @@ function Thumb({ type }) {
 }
 
 function FloorMap({ floor, selectedId, onSelect }) {
+  const planFloor = floor.icon === "stairs" ? "first" : "ground";
+
   return (
     <div className="map-shell" key={floor.title}>
-      <div className="map-head">
-        <span className="floor-icon">
-          <FloorIcon type={floor.icon} />
-        </span>
-        <div>
-          <p className="section-kicker">Mappa interattiva</p>
-          <h2>{floor.title}</h2>
-        </div>
-      </div>
-
       <div className="map-board">
-        <PlanDrawing floor={floor.icon === "stairs" ? "first" : "ground"} />
-
-        {floor.labels.map((label) => (
-          <span
-            className={`map-label map-label--${label.align}`}
-            key={label.text}
-            style={{ "--x": `${label.x}%`, "--y": `${label.y}%` }}
-          >
-            {label.text}
-          </span>
-        ))}
+        <PlanDrawing floor={planFloor} />
 
         {floor.works.map((work) => (
           <button
@@ -315,7 +351,7 @@ function FloorMap({ floor, selectedId, onSelect }) {
             aria-pressed={selectedId === work.id}
             aria-label={`${work.number}. ${work.artist}, ${work.title}, ${work.room}`}
             key={work.id}
-            onClick={() => onSelect(work.id)}
+            onClick={() => onSelect(work.id, true)}
             style={{
               "--x": `${work.x}%`,
               "--y": `${work.y}%`,
@@ -327,9 +363,6 @@ function FloorMap({ floor, selectedId, onSelect }) {
           </button>
         ))}
 
-        <span className="entry-arrow" aria-hidden="true">
-          ↑
-        </span>
       </div>
     </div>
   );
@@ -416,7 +449,7 @@ export default function ExhibitionPage() {
     setSelectedId(id);
     if (shouldScroll) {
       requestAnimationFrame(() => {
-        rowRefs.current.get(id)?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        rowRefs.current.get(id)?.scrollIntoView({ behavior: "smooth", block: "center" });
       });
     }
   }
@@ -468,7 +501,24 @@ export default function ExhibitionPage() {
 
       <section className="route-visualizer" aria-label="Interactive exhibition map">
         <FloorMap floor={floor} selectedId={selectedWork.id} onSelect={selectWork} />
-        <SelectedWork work={selectedWork} floor={floor} />
+      </section>
+
+      <section className="works-section" aria-label="Featured works">
+        <div className="works-section-head">
+          <p className="section-kicker">Opere in evidenza</p>
+          <p>{floor.intro}</p>
+        </div>
+        <div className="works-list">
+          {floor.works.map((work) => (
+            <WorkRow
+              key={work.id}
+              work={work}
+              isActive={selectedWork.id === work.id}
+              onSelect={selectWork}
+              register={registerRow}
+            />
+          ))}
+        </div>
       </section>
 
       <section className="mountain-strip" aria-label="Environmental reading">
@@ -498,24 +548,6 @@ export default function ExhibitionPage() {
             <p>{fact.label}</p>
           </article>
         ))}
-      </section>
-
-      <section className="works-section" aria-label="Featured works">
-        <div className="works-section-head">
-          <p className="section-kicker">Opere in evidenza</p>
-          <p>{floor.intro}</p>
-        </div>
-        <div className="works-list">
-          {floor.works.map((work) => (
-            <WorkRow
-              key={work.id}
-              work={work}
-              isActive={selectedWork.id === work.id}
-              onSelect={selectWork}
-              register={registerRow}
-            />
-          ))}
-        </div>
       </section>
 
       <footer className="visit-footer">
