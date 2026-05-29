@@ -199,26 +199,28 @@ function FloorMap({ floor, selectedId, onSelect }) {
   return (
     <div className="map-shell" key={floor.title}>
       <div className={`map-board map-board--${planFloor}`}>
-        <PlanDrawing floor={planFloor} />
+        <div className={`floor-plan-layer floor-plan-layer--${planFloor}`}>
+          <PlanDrawing floor={planFloor} />
 
-        {floor.works.map((work) => (
-          <button
-            className={`map-marker${work.added ? " map-marker--added" : ""}`}
-            type="button"
-            aria-pressed={selectedId === work.id}
-            aria-label={`${work.number}. ${work.artist}, ${work.title}, ${work.room}`}
-            key={work.id}
-            onClick={() => onSelect(work.id, true)}
-            style={{
-              "--x": `${work.x}%`,
-              "--y": `${work.y}%`,
-              "--blob": work.shape,
-              "--tone": work.tone
-            }}
-          >
-            <span>{work.number}</span>
-          </button>
-        ))}
+          {floor.works.map((work) => (
+            <button
+              className={`map-marker${work.added ? " map-marker--added" : ""}`}
+              type="button"
+              aria-pressed={selectedId === work.id}
+              aria-label={`${work.number}. ${work.artist}, ${work.title}, ${work.room}`}
+              key={work.id}
+              onClick={() => onSelect(work.id, true)}
+              style={{
+                "--x": `${work.x}%`,
+                "--y": `${work.y}%`,
+                "--blob": work.shape,
+                "--tone": work.tone
+              }}
+            >
+              <span>{work.number}</span>
+            </button>
+          ))}
+        </div>
 
       </div>
     </div>
