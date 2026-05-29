@@ -517,7 +517,7 @@ a {
   position: relative;
   display: inline-block;
   width: min(100%, 520px);
-  aspect-ratio: 676 / 420;
+  aspect-ratio: 676 / 558;
   max-width: 100%;
   margin: 0 auto;
   overflow: visible;
@@ -536,7 +536,7 @@ a {
   max-width: 100%;
   object-fit: contain;
   user-select: none;
-  background: transparent;
+  background: #fffdf8;
 }
 
 .floor-fan-transition {
@@ -1132,11 +1132,11 @@ a {
   }
 
   .map-board {
-    width: min(100%, 330px);
+    width: min(100%, 340px);
   }
 
   .map-shell {
-    padding: 8px 0;
+    padding: 4px 0;
   }
 
   .map-marker {
@@ -1158,9 +1158,9 @@ a {
   }
 
   .work-row button {
-    grid-template-columns: 28px 70px minmax(0, 1fr);
-    gap: 10px;
-    padding: 6px 0;
+    grid-template-columns: 26px 64px minmax(0, 1fr);
+    gap: 9px;
+    padding: 5px 0;
   }
 
   .work-copy {
@@ -1173,12 +1173,12 @@ a {
   .work-copy small {
     display: block;
     margin-bottom: 2px;
-    font-size: 0.82rem;
-    line-height: 1.12;
+    font-size: 0.78rem;
+    line-height: 1.08;
   }
 
   .work-row .work-thumb {
-    width: 70px;
+    width: 64px;
   }
 
   .menu-panel {
@@ -1202,11 +1202,30 @@ a {
 
 @media (max-width: 520px) {
   .exhibition-page {
-    padding: 16px;
+    padding: 12px;
   }
 
   .utility-row span:nth-child(2) {
     display: none;
+  }
+
+  .utility-row {
+    min-height: 18px;
+    gap: 16px;
+    font-size: 0.74rem;
+  }
+
+  .brand-row {
+    padding: 2px 0 8px;
+  }
+
+  .brand span {
+    margin-bottom: 4px;
+    font-size: 0.53rem;
+  }
+
+  .brand strong {
+    font-size: clamp(2.3rem, 11vw, 3.15rem);
   }
 
   .menu-button span {
@@ -1214,7 +1233,34 @@ a {
   }
 
   .floor-tabs {
-    margin-inline: -16px;
+    margin-inline: -12px;
+  }
+
+  .floor-tabs button {
+    min-height: 38px;
+    font-size: 0.78rem;
+  }
+
+  .map-intro {
+    padding: 8px 0 6px;
+    row-gap: 5px;
+  }
+
+  .map-intro h1 {
+    font-size: clamp(1.55rem, 6.7vw, 2.18rem);
+    line-height: 0.9;
+  }
+
+  .route-visualizer {
+    padding: 5px 0 5px;
+  }
+
+  .map-shell {
+    padding: 0;
+  }
+
+  .map-board {
+    width: min(100%, 340px);
   }
 
   .map-marker {
@@ -1223,4 +1269,89 @@ a {
     font-size: 0.46rem;
   }
 
+  .works-section {
+    padding-top: 7px;
+  }
+
+  .works-section-head {
+    margin-bottom: 6px;
+  }
+
+  .work-row button {
+    grid-template-columns: 24px 58px minmax(0, 1fr);
+    gap: 8px;
+    min-height: 76px;
+    padding: 4px 0;
+  }
+
+  .work-row .work-thumb {
+    width: 58px;
+  }
+
+  .work-copy strong,
+  .work-copy em,
+  .work-copy span,
+  .work-copy small {
+    margin-bottom: 1px;
+    font-size: 0.74rem;
+    line-height: 1.04;
+  }
+
+  .visit-footer {
+    gap: 8px;
+    padding-top: 6px;
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 520px) and (max-height: 760px) {
+  .map-header {
+    border-bottom-color: rgba(29, 23, 20, 0.12);
+  }
+
+  .brand strong {
+    font-size: clamp(2rem, 9.8vw, 2.8rem);
+  }
+
+  .map-intro {
+    padding: 6px 0 5px;
+  }
+
+  .map-intro h1 {
+    font-size: clamp(1.42rem, 6.1vw, 1.95rem);
+  }
+
+  .floor-tabs button {
+    min-height: 34px;
+  }
+
+  .map-board {
+    width: min(100%, 320px);
+  }
+
+  .route-visualizer {
+    padding: 4px 0;
+  }
+
+  .works-section {
+    padding-top: 6px;
+  }
+
+  .work-row button {
+    grid-template-columns: 22px 52px minmax(0, 1fr);
+    min-height: 70px;
+    padding: 3px 0;
+  }
+
+  .work-row .work-thumb {
+    width: 52px;
+  }
+
+  .work-copy strong,
+  .work-copy em,
+  .work-copy span,
+  .work-copy small {
+    font-size: 0.7rem;
+    line-height: 1.02;
+  }
 }
