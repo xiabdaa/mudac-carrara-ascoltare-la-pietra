@@ -252,24 +252,47 @@ function WorkRow({ work, isActive, onSelect, register }) {
 const menuPanels = {
   story: {
     label: "Story",
-    kicker: "Curatorial Concept",
-    title: "The stone is already in conversation",
-    body:
-      "Resonant Matter treats marble not as inert matter but as geological memory: mineral flesh formed through pressure, darkness, heat and transformation. Visitors move through sculpture as a dialogue between body, material, landscape and history."
+    kicker: "Exhibition Title",
+    title: "RESONANT MATTER",
+    body: [
+      "Listening and dialogue revealing form.",
+      "Marble is not inert matter. It is compressed geological memory: mineral flesh formed through pressure, darkness, heat and transformation over millions of years.",
+      "In Carrara, stone is not simply extracted. It is revealed. The mountains surrounding the city contain layers of geological, cultural and human history, and the act of carving becomes a negotiation between matter and memory.",
+      "The mountain is not a resource. It is a body of time. The stone is not passive. It is already in conversation."
+    ]
+  },
+  route: {
+    label: "Route",
+    kicker: "Exhibition Narrative",
+    title: "From courtyard to collection",
+    body: [
+      "The courtyard is imagined as a brighter, unified environment covered with white marble chips, directly connecting the visitor to Carrara's stone-working traditions.",
+      "Verena Mayer Tasch's monumental marble leaf becomes a central point of encounter, while selected sculptures by Selena Frosini and Francesca Bernardini create a layered dialogue between the courtyard, cloisters and museum rooms.",
+      "Silvia Scaringella's installation is presented in dialogue with Yuri Ancarani's Il Capo, bringing two perspectives on Carrara into contact: industrial extraction and fragile ecosystems.",
+      "Anna Multone's works extend the collection's ongoing reflections on materiality, memory, transformation and everyday life."
+    ]
   },
   artists: {
     label: "Artists",
     kicker: "Five Women Sculptors",
-    title: "Five ways of listening",
-    body:
-      "Verena Mayer Tasch, Selena Frosini, Francesca Bernardini, Silvia Scaringella and Anna Multone each approach sculpture as a form of listening: to marble, to resistance, to density, to history and to the memories embedded in matter."
+    title: "Five women sculptors",
+    body: [
+      "The exhibition brings together five women sculptors whose practices differ in language, technique, scale and aesthetic approach.",
+      "Verena Mayer Tasch works with marble as threshold and encounter. Selena Frosini develops a way of listening to fragment, surface and resistance.",
+      "Francesca Bernardini explores abstraction and organic form, extending shells, cocoons and protective inner spaces into contemporary sculpture.",
+      "Silvia Scaringella opens a dialogue between landscape, material and human intervention. Anna Multone connects sculpture with memory, transformation and everyday life.",
+      "Five ways of listening, five ways of revealing form."
+    ]
   },
   team: {
     label: "Team",
-    kicker: "Curatorial Proposal",
+    kicker: "Curatorial Team",
     title: "MUDAC Carrara, September 2026",
-    body:
-      "Conceived and developed by Taissiya Shaidarova, Lingjia Zhang, Gianfranco Di Vassi, Shuhe Wang, Kechen Zheng and Zijian Xiao, the proposal frames the museum map as a guide through listening, form and environmental attention."
+    body: [
+      "Curatorial exhibition proposal conceived and developed for MUDAC, Museo delle Arti Carrara.",
+      "Conceived and developed by Taissiya Shaidarova, Lingjia Zhang, Gianfranco Di Vassi, Shuhe Wang, Kechen Zheng and Zijian Xiao.",
+      "The website frames the museum map as an interactive route through listening, form, geological memory and environmental attention."
+    ]
   }
 };
 
@@ -347,7 +370,11 @@ function MenuOverlay({ open, activePanel, onPanelChange, onClose }) {
         <section className="menu-panel-copy" aria-live="polite">
           <p className="section-kicker">{panel.kicker}</p>
           <h2>{panel.title}</h2>
-          <p>{panel.body}</p>
+          <div className="menu-panel-body">
+            {panel.body.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
         </section>
       </div>
     </aside>
