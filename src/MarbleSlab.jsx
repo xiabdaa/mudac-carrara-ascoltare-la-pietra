@@ -152,7 +152,7 @@ function SlabLabel({ onEnter }) {
     >
       <button className="slab-text" type="button" onClick={onEnter}>
         <span>MUDAC Carrara</span>
-        <strong role="heading" aria-level="1">ASCOLTARE LA PIETRA</strong>
+        <strong role="heading" aria-level="1">RESONANT MATTER</strong>
         <em>Click the marble to enter</em>
       </button>
     </Html>

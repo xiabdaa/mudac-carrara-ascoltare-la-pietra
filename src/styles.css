@@ -1102,6 +1102,31 @@ a {
   }
 }
 
+@media (min-width: 821px) and (max-width: 1100px) and (max-height: 820px) {
+  .route-module {
+    grid-template-rows: minmax(0, clamp(300px, 41vh, 330px)) minmax(170px, 1fr);
+  }
+
+  .map-board {
+    width: min(100%, 360px);
+  }
+
+  .work-row button {
+    grid-template-columns: 34px minmax(64px, 78px) minmax(0, 1fr);
+    gap: 12px;
+    min-height: 64px;
+    padding: 3px 0;
+  }
+
+  .work-copy strong,
+  .work-copy em,
+  .work-copy span,
+  .work-copy small {
+    font-size: 0.74rem;
+    line-height: 1.05;
+  }
+}
+
 @media (max-width: 820px) {
   .landing-page,
   .scene-shell {

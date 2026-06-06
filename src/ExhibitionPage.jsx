@@ -12,58 +12,58 @@ const floors = {
     title: "Piano terra",
     icon: "ground",
     intro:
-      "Entrance, temporary exhibitions and conference rooms. The route begins with clay, dust and the first signs of the mountain entering the museum.",
+      "Courtyard, cloisters and ground-floor rooms. The route begins with marble chips, listening fragments and sculptural gestures that connect the museum to Carrara's stone-working landscape.",
     works: [
       {
         id: "g1",
         number: "1",
-        artist: "Chiara Camoni",
-        title: "Colonna (Bifronte)",
-        year: "2025",
-        material: "Terracotta galestro",
-        room: "Spazio Mostre Temporanee",
+        artist: "Verena Mayer Tasch",
+        title: "Marble leaf",
+        year: "2026",
+        material: "Marble, white chips, courtyard intervention",
+        room: "Courtyard center",
         x: 47.4,
         y: 80.2,
         shape: "58% 42% 61% 39% / 43% 57% 38% 62%",
         tone: "#3b1a12",
-        thumb: "terracotta"
+        thumb: "white"
       },
       {
         id: "g2",
         number: "2",
-        artist: "Giulio Paolini",
-        title: "Disegnare il marmo",
-        year: "1978",
-        material: "Marmo e disegno su carta",
-        room: "Sala Conferenze",
+        artist: "Silvia Scaringella",
+        title: "In dialogue with Il Capo",
+        year: "2026",
+        material: "Video dialogue and sculptural installation",
+        room: "Dark room / projection route",
         x: 69.5,
         y: 81.5,
         shape: "46% 54% 45% 55% / 52% 41% 59% 48%",
         tone: "#261009",
-        thumb: "white"
+        thumb: "video"
       },
       {
         id: "g3",
         number: "3",
-        artist: "Luca Trevisani",
-        title: "Senza titolo",
-        year: "2019",
-        material: "Installazione",
-        room: "Sala Conferenze",
+        artist: "Francesca Bernardini",
+        title: "Forms from within",
+        year: "2026",
+        material: "Organic sculptural forms",
+        room: "Historical collection dialogue",
         x: 75.1,
         y: 60,
         shape: "53% 47% 64% 36% / 44% 58% 42% 56%",
         tone: "#24100a",
-        thumb: "light"
+        thumb: "drawing"
       },
       {
         id: "g4",
         number: "4",
-        artist: "Giuseppe Penone",
-        title: "Pelle di marmo",
-        year: "1981",
-        material: "Marmo, grafite, tracce organiche",
-        room: "Mostre Temporanee",
+        artist: "Selena Frosini",
+        title: "Listening fragments",
+        year: "2026",
+        material: "Sculptural fragments in stone and matter",
+        room: "Cloister route",
         x: 32.8,
         y: 59.2,
         shape: "47% 53% 58% 42% / 54% 43% 57% 46%",
@@ -74,11 +74,11 @@ const floors = {
       {
         id: "g5",
         number: "5",
-        artist: "Archivio Apuano",
-        title: "Cartografia della cava",
+        artist: "Resonant Matter",
+        title: "White marble chips",
         year: "2026",
-        material: "Fotografie, carte, suono",
-        room: "Spazio Mostre Temporanee",
+        material: "Ground material connecting routes and thresholds",
+        room: "Courtyard and cloisters",
         x: 42.3,
         y: 73.2,
         shape: "55% 45% 44% 56% / 48% 59% 41% 52%",
@@ -93,15 +93,15 @@ const floors = {
     title: "Piano primo",
     icon: "stairs",
     intro:
-      "Historical collection, residencies and contemporary rooms. Upstairs, the route turns from extraction toward memory, repair and civic imagination.",
+      "Historical and contemporary collection rooms. Upstairs, the route places sculpture in dialogue with memory, transformation, everyday life and the museum's permanent display.",
     works: [
       {
         id: "f7",
         number: "4",
-        artist: "Alighiero Boetti",
-        title: "Mappa",
-        year: "1969",
-        material: "Ricamo su tessuto",
+        artist: "Francesca Bernardini",
+        title: "Organic forms",
+        year: "2026",
+        material: "Shells, cocoons and protective inner spaces",
         room: "Collezione Storica",
         x: 32.8,
         y: 37.8,
@@ -112,10 +112,10 @@ const floors = {
       {
         id: "f8",
         number: "5",
-        artist: "Collezione storica",
-        title: "Atlante del marmo",
-        year: "1957-1973",
-        material: "Documenti e sculture",
+        artist: "Selena Frosini",
+        title: "Five ways of listening",
+        year: "2026",
+        material: "Sculpture as attentive encounter",
         room: "Collezione Storica",
         x: 32.8,
         y: 54.1,
@@ -126,10 +126,10 @@ const floors = {
       {
         id: "f9",
         number: "6",
-        artist: "Elisa Montessori",
-        title: "Paesaggio interiore",
-        year: "2022",
-        material: "Video installazione",
+        artist: "Anna Multone",
+        title: "Materiality and memory",
+        year: "2026",
+        material: "Sculpture, transformation and everyday life",
         room: "Residenze d'Artista",
         x: 70.6,
         y: 34.1,
@@ -140,10 +140,10 @@ const floors = {
       {
         id: "f10",
         number: "7",
-        artist: "Studio ambientale",
-        title: "Water memory",
+        artist: "Verena Mayer Tasch",
+        title: "Marble as threshold",
         year: "2026",
-        material: "Suono, luce, acqua",
+        material: "Marble blocks and sculptural intervention",
         room: "Opere Eccezionali",
         x: 70.7,
         y: 51.4,
@@ -154,10 +154,10 @@ const floors = {
       {
         id: "f11",
         number: "8",
-        artist: "Archivio Carrara",
-        title: "Disegnare il marmo",
+        artist: "Silvia Scaringella",
+        title: "Two perspectives on Carrara",
         year: "2026",
-        material: "Disegni, fotografie, rilievi",
+        material: "Dialogue between industrial extraction and fragile ecosystems",
         room: "Disegnare il Marmo",
         x: 70.7,
         y: 64.3,
@@ -168,10 +168,10 @@ const floors = {
       {
         id: "f12",
         number: "9",
-        artist: "Michelangelo Pistoletto",
-        title: "Venere degli stracci",
-        year: "1967",
-        material: "Scultura in marmo",
+        artist: "Resonant Matter",
+        title: "Revealing form",
+        year: "2026",
+        material: "Shared route through listening, place and material",
         room: "Collezione Contemporanea",
         x: 51.5,
         y: 73.1,
@@ -252,24 +252,24 @@ function WorkRow({ work, isActive, onSelect, register }) {
 const menuPanels = {
   story: {
     label: "Story",
-    kicker: "Exhibition Background",
-    title: "A city listening to the mountain",
+    kicker: "Curatorial Concept",
+    title: "The stone is already in conversation",
     body:
-      "Ascoltare la pietra follows Carrara through marble, extraction and civic memory. The route asks visitors to read each artwork as a position in the museum and as a trace of the Apuan Alps, where beauty, labour and environmental pressure meet."
+      "Resonant Matter treats marble not as inert matter but as geological memory: mineral flesh formed through pressure, darkness, heat and transformation. Visitors move through sculpture as a dialogue between body, material, landscape and history."
   },
   artists: {
     label: "Artists",
-    kicker: "Selected Artists",
-    title: "Voices across stone, map and archive",
+    kicker: "Five Women Sculptors",
+    title: "Five ways of listening",
     body:
-      "Chiara Camoni, Giulio Paolini, Luca Trevisani, Alighiero Boetti, Elisa Montessori and Michelangelo Pistoletto become different ways to approach marble: body, drawing, installation, geography, video and public memory."
+      "Verena Mayer Tasch, Selena Frosini, Francesca Bernardini, Silvia Scaringella and Anna Multone each approach sculpture as a form of listening: to marble, to resistance, to density, to history and to the memories embedded in matter."
   },
   team: {
     label: "Team",
-    kicker: "Curatorial Team",
-    title: "MUDAC Carrara study route",
+    kicker: "Curatorial Proposal",
+    title: "MUDAC Carrara, September 2026",
     body:
-      "The curatorial team frames the museum plan as a visitor tool: each point helps audiences locate a work, understand its room and connect the exhibition to Carrara's fragile mountain landscape."
+      "Conceived and developed by Taissiya Shaidarova, Lingjia Zhang, Gianfranco Di Vassi, Shuhe Wang, Kechen Zheng and Zijian Xiao, the proposal frames the museum map as a guide through listening, form and environmental attention."
   }
 };
 
@@ -445,10 +445,10 @@ export default function ExhibitionPage() {
 
       <section className="map-intro" aria-labelledby="route-title">
         <p className="section-kicker">Interactive route</p>
-        <h1 id="route-title">ASCOLTARE LA PIETRA</h1>
+        <h1 id="route-title">RESONANT MATTER</h1>
         <p>
-          Find each work by floor and room while connecting Carrara's
-          marble culture to the environmental pressure of over-extraction.
+          Listening and dialogue revealing form. Find each intervention by floor
+          and room while following marble as memory, pressure and transformation.
         </p>
       </section>
 

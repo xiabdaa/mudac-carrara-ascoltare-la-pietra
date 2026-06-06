@@ -192,8 +192,8 @@ function MuseumTitle({ onEnter }) {
     <div className="museum-ui museum-ui--dark">
       <p className="museum-eyebrow">Museo delle Arti Carrara</p>
       <div className="museum-title-stack">
-        <p className="museum-context">ASCOLTARE LA PIETRA</p>
-        <p className="museum-subtitle">Move the light. Listen to the marble before entering the route.</p>
+        <p className="museum-context">RESONANT MATTER</p>
+        <p className="museum-subtitle">Listening and dialogue revealing form.</p>
       </div>
       <button className="enter-button" type="button" onClick={onEnter}>
         Enter the exhibition
