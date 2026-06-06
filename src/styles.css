@@ -535,10 +535,11 @@ a {
   display: block;
   width: 100%;
   max-width: 100%;
+  aspect-ratio: 676 / 558;
 }
 
 .floor-plan-layer--ground {
-  aspect-ratio: 676 / 420;
+  aspect-ratio: 676 / 558;
 }
 
 .floor-plan-layer--first {
