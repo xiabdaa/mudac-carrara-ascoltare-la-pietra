@@ -3,7 +3,7 @@ import { forwardRef, useEffect, useMemo, useState } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 
-const MODEL_URL = `${import.meta.env.BASE_URL}models/greek_sculpture/marble_bust_01_1k.gltf`;
+const MODEL_URL = `${import.meta.env.BASE_URL}models/lattice_in_stone.glb`;
 
 function createMarbleTexture(kind = "albedo") {
   const canvas = document.createElement("canvas");
@@ -112,7 +112,7 @@ function useModelAvailable() {
   return available;
 }
 
-function LoadedSculpture({ fallbackMaterial }) {
+function LoadedSculpture() {
   const { scene } = useGLTF(MODEL_URL);
 
   const model = useMemo(() => {
@@ -121,7 +121,10 @@ function LoadedSculpture({ fallbackMaterial }) {
       if (child.isMesh) {
         child.castShadow = true;
         child.receiveShadow = true;
-        child.material = fallbackMaterial;
+        if (child.material) {
+          child.material = child.material.clone();
+          child.material.envMapIntensity = 0.9;
+        }
       }
     });
 
@@ -136,7 +139,7 @@ function LoadedSculpture({ fallbackMaterial }) {
     clone.position.set(-center.x * scale, -box.min.y * scale - 1.68, -center.z * scale);
 
     return clone;
-  }, [scene, fallbackMaterial]);
+  }, [scene]);
 
   return <primitive object={model} />;
 }
@@ -292,7 +295,7 @@ const GreekSculpture = forwardRef(function GreekSculpture({ isEntering, onEnter 
       }}
     >
       {hasModel ? (
-        <LoadedSculpture fallbackMaterial={material} />
+        <LoadedSculpture />
       ) : (
         <PlaceholderSculpture material={material} baseMaterial={baseMaterial} />
       )}
