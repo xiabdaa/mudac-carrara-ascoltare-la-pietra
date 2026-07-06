@@ -768,6 +768,7 @@ export default function ExhibitionPage() {
         <section className="works-section" aria-label="Featured works">
           <div className="works-section-head">
             <p className="section-kicker">Opere in evidenza</p>
+            <span className="map-design-credit">XIAO ZIJIAN DESIGN</span>
           </div>
           <div className="works-list" ref={worksListRef}>
             {floor.works.map((work) => (

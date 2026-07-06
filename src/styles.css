@@ -662,8 +662,10 @@ a {
 }
 
 .map-marker--double-digit span {
-  letter-spacing: -0.06em;
-  transform: translateX(-0.02em);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.78em;
+  letter-spacing: 0;
+  transform: none;
 }
 
 .map-marker:hover,
@@ -818,8 +820,20 @@ a {
 }
 
 .works-section-head {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline;
   margin-bottom: 8px;
+}
+
+.map-design-credit {
+  color: rgba(29, 23, 20, 0.5);
+  font-size: clamp(0.52rem, 0.72vw, 0.64rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .works-section-head p:last-child {
@@ -1261,7 +1275,7 @@ a {
   }
 
   .map-board {
-    width: min(100%, clamp(330px, 44vh, 410px));
+    width: min(100%, clamp(280px, 38vh, 360px));
     height: auto;
     max-width: min(100%, 520px);
   }
@@ -1291,11 +1305,11 @@ a {
 
 @media (min-width: 821px) and (max-width: 1100px) and (max-height: 820px) {
   .route-module {
-    grid-template-rows: minmax(0, clamp(300px, 41vh, 330px)) minmax(170px, 1fr);
+    grid-template-rows: minmax(0, clamp(320px, 42vh, 340px)) minmax(160px, 1fr);
   }
 
   .map-board {
-    width: min(100%, 360px);
+    width: min(100%, 300px);
   }
 
   .work-row button {

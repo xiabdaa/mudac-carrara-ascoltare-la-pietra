@@ -108,9 +108,24 @@ if (!/\.map-marker\s*\{[^}]*width: clamp\(20px, 1\.6vw, 24px\);[^}]*height: clam
 if (
   !page.includes("map-marker--double-digit") ||
   !/\.map-marker span\s*\{[^}]*display: grid;[^}]*place-items: center;[^}]*font-variant-numeric: tabular-nums;[^}]*line-height: 1;/.test(styles) ||
-  !/\.map-marker--double-digit span\s*\{[^}]*letter-spacing: -0\.06em;/.test(styles)
+  !/\.map-marker--double-digit span\s*\{[^}]*font-family: ui-monospace,[^}]*font-size: 0\.78em;[^}]*letter-spacing: 0;[^}]*transform: none;/.test(styles)
 ) {
   throw new Error("Double-digit map labels are not optically centered");
+}
+
+if (
+  !page.includes('<span className="map-design-credit">XIAO ZIJIAN DESIGN</span>') ||
+  !/\.works-section-head\s*\{[^}]*display: flex;[^}]*justify-content: space-between;/.test(styles) ||
+  !/\.map-design-credit\s*\{[^}]*letter-spacing: 0\.14em;[^}]*text-transform: uppercase;/.test(styles)
+) {
+  throw new Error("The exhibition map design credit is missing or misplaced");
+}
+
+if (
+  !/@media \(min-width: 821px\) and \(max-height: 980px\)\s*\{[\s\S]*?\.map-board\s*\{[^}]*width: min\(100%, clamp\(280px, 38vh, 360px\)\);/.test(styles) ||
+  !/@media \(min-width: 821px\) and \(max-width: 1100px\) and \(max-height: 820px\)\s*\{[\s\S]*?grid-template-rows: minmax\(0, clamp\(320px, 42vh, 340px\)\) minmax\(160px, 1fr\);[\s\S]*?\.map-board\s*\{[^}]*width: min\(100%, 300px\);/.test(styles)
+) {
+  throw new Error("The compact iPad landscape map can still overflow its panel");
 }
 
 if (
@@ -156,7 +171,7 @@ for (const requiredText of [
 
 if (
   !styles.includes(
-    ".map-board {\n    width: min(100%, clamp(330px, 44vh, 410px));\n    height: auto;"
+    ".map-board {\n    width: min(100%, clamp(280px, 38vh, 360px));\n    height: auto;"
   )
 ) {
   throw new Error("Desktop map can exceed the available panel height and be clipped");
