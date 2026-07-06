@@ -72,12 +72,12 @@ if ((page.match(/href=\{import\.meta\.env\.BASE_URL\}/g) ?? []).length !== 2) {
 }
 
 for (const [id, x] of [
-  ["g4", 38],
-  ["g5", 47],
-  ["g6", 56],
-  ["g7", 65]
+  ["g4", 38.5],
+  ["g5", 47.1],
+  ["g6", 55.8],
+  ["g7", 64.4]
 ]) {
-  if (!new RegExp(`id: "${id}"[\\s\\S]*?x: ${x},[\\s\\S]*?y: 8\\.5,`).test(page)) {
+  if (!new RegExp(`id: "${id}"[\\s\\S]*?x: ${String(x).replace(".", "\\.")},[\\s\\S]*?y: 8\\.4,`).test(page)) {
     throw new Error(`Ground-floor marker ${id} is not centered clear of the upper wall`);
   }
 }
@@ -125,10 +125,25 @@ if (!/\.map-shell\s*\{[^}]*width: 100%;/.test(styles)) {
 }
 
 if (
-  !/\.floor-plan-image--ground\s*\{[^}]*top: -28\.2%;[^}]*left: -12\.5%;[^}]*width: 125%;/.test(styles) ||
-  !/\.floor-plan-layer--ground \.map-marker\s*\{[^}]*top: calc\(var\(--y\) - 5%\);/.test(styles)
+  !/\.floor-plan-image--ground\s*\{[^}]*top: -22%;[^}]*left: -10%;[^}]*width: 120%;/.test(styles) ||
+  styles.includes(".floor-plan-layer--ground .map-marker")
 ) {
   throw new Error("Ground-floor plan can be cropped at the bottom on desktop");
+}
+
+for (const requiredText of [
+  "Resonant Matter brings together five women sculptors whose practices challenge the traditional notion of marble as a material to be conquered.",
+  "Rather than treating marble as passive material, the exhibition approaches it as an active presence",
+  "The mountain is not a resource. It is a body of time.",
+  "Verena Mayer Tasch - Growth & Nature",
+  "Selene Frosini - Material Transformation",
+  "Silvia Scaringella - Water & Living Systems",
+  "Francesca Bernardini - Fragility & Memory",
+  "Anna Multone - Craft & Everyday Ritual"
+]) {
+  if (!page.includes(requiredText)) {
+    throw new Error(`Missing supplied curatorial copy: ${requiredText}`);
+  }
 }
 
 if (

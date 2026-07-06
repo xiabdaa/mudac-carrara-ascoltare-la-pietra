@@ -54,8 +54,8 @@ const floors = {
         title: "Listening Fragment I",
         material: "Carved stone study",
         room: "West gallery",
-        x: 20.9,
-        y: 57.5,
+        x: 22.1,
+        y: 55.5,
         images: [artworkImage("ground", 1)]
       },
       {
@@ -65,8 +65,8 @@ const floors = {
         title: "Listening Fragment II",
         material: "Stone, aperture and dark matter",
         room: "West gallery",
-        x: 20.6,
-        y: 40.1,
+        x: 21.8,
+        y: 38.8,
         images: [artworkImage("ground", 2)]
       },
       {
@@ -76,8 +76,8 @@ const floors = {
         title: "Listening Fragment III",
         material: "Perforated stone form",
         room: "West gallery",
-        x: 20.5,
-        y: 18.5,
+        x: 21.7,
+        y: 18,
         images: [artworkImage("ground", 3)]
       },
       {
@@ -87,8 +87,8 @@ const floors = {
         title: "Forms from Within II",
         material: "Abstract organic sculpture",
         room: "North gallery",
-        x: 38,
-        y: 8.5,
+        x: 38.5,
+        y: 8.4,
         images: [artworkImage("ground", 4)]
       },
       {
@@ -98,8 +98,8 @@ const floors = {
         title: "Material Memory",
         material: "Stone form and sculptural fragments",
         room: "North gallery",
-        x: 47,
-        y: 8.5,
+        x: 47.1,
+        y: 8.4,
         images: [artworkImage("ground", 5)]
       },
       {
@@ -109,8 +109,8 @@ const floors = {
         title: "Relational Form",
         material: "Sculptural form and domestic structure",
         room: "North gallery",
-        x: 56,
-        y: 8.5,
+        x: 55.8,
+        y: 8.4,
         images: [artworkImage("ground", 6)]
       },
       {
@@ -120,8 +120,8 @@ const floors = {
         title: "Stone Body",
         material: "Dark stone study",
         room: "North gallery",
-        x: 65,
-        y: 8.5,
+        x: 64.4,
+        y: 8.4,
         images: [artworkImage("ground", 7)]
       },
       {
@@ -131,8 +131,8 @@ const floors = {
         title: "Listening Fragment IV",
         material: "Split marble form and apertures",
         room: "East gallery",
-        x: 72.4,
-        y: 20.4,
+        x: 71.5,
+        y: 19.9,
         images: [artworkImage("ground", 8)]
       },
       {
@@ -142,8 +142,8 @@ const floors = {
         title: "Listening Fragment V",
         material: "Marble surface and void",
         room: "East gallery",
-        x: 72.1,
-        y: 37.2,
+        x: 71.2,
+        y: 36,
         images: [artworkImage("ground", 9)]
       },
       {
@@ -153,8 +153,8 @@ const floors = {
         title: "Listening Fragment VI",
         material: "Extraction, landscape and fragile ecosystems",
         room: "East gallery",
-        x: 71.4,
-        y: 53.6,
+        x: 70.5,
+        y: 51.7,
         images: [artworkImage("ground", 10)]
       },
       {
@@ -164,8 +164,8 @@ const floors = {
         title: "Materiality and Memory I",
         material: "Sculpture, memory and everyday form",
         room: "Courtyard center",
-        x: 44.9,
-        y: 57.6,
+        x: 45.1,
+        y: 55.6,
         images: [artworkImage("ground", 11)]
       }
     ]
@@ -489,36 +489,50 @@ function WorkDetailModal({ work, onClose }) {
 const menuPanels = {
   story: {
     label: "Story",
-    kicker: "Exhibition Title",
-    title: "RESONANT MATTER",
+    kicker: "Curatorial Text",
+    title: "Marble is not inert matter.",
     body: [
-      "Listening and dialogue revealing form.",
-      "Marble is not inert matter. It is compressed geological memory: mineral flesh formed through pressure, darkness, heat and transformation over millions of years.",
-      "In Carrara, stone is not simply extracted. It is revealed. The mountains surrounding the city contain layers of geological, cultural and human history, and the act of carving becomes a negotiation between matter and memory.",
-      "The mountain is not a resource. It is a body of time. The stone is not passive. It is already in conversation."
+      "It is compressed geological memory: mineral flesh formed through pressure, darkness, heat, and transformation over millions of years. Long before becoming sculpture, marble existed as movement. What appears solid and permanent is, in fact, the visible residue of continuous metamorphosis.",
+      "In Carrara, stone is not simply extracted. It is revealed, and every revelation leaves a wound the landscape remembers.",
+      "The mountains surrounding the city contain layers of geological, cultural, and human history. They bear witness to processes that far exceed the scale of individual lives. Marble therefore occupies a unique position between matter and memory, landscape and archive, natural formation and cultural construction.",
+      "Resonant Matter proposes a reconsideration of how sculpture comes into being.",
+      "Against traditions that have often framed artistic creation as an act of mastery over material, this exhibition approaches sculpture as a relational process. Here, carving becomes a form of listening. The artist enters into dialogue with the stone, responding to its resistance, density, history, and possibilities. Form does not precede the encounter; it emerges through it.",
+      "The exhibition gathers five sculptors whose practices differ significantly in language, technique, scale, and aesthetic approach. What connects them is not a shared style, but a shared disposition toward attentiveness. Each artist develops a particular way of listening to marble and to the histories embedded within it.",
+      "Within this framework, the feminine is understood not as identity but as a mode of engagement: reciprocity rather than domination, transformation rather than conquest, continuity rather than rupture. These practices challenge inherited narratives of sculptural authority and propose alternative relationships between body, material, and landscape.",
+      "The mountain is not a resource. It is a body of time.",
+      "The stone is not passive. It is already in conversation.",
+      "Resonant Matter invites visitors to enter this conversation and to experience sculpture as an act of attention: a process through which material, artist, place, and history become mutually transformed."
     ]
   },
   route: {
     label: "Route",
-    kicker: "Exhibition Narrative",
-    title: "From courtyard to collection",
+    kicker: "Main Idea",
+    title: "Listening rather than mastery",
     body: [
-      "The courtyard is imagined as a brighter, unified environment covered with white marble chips, directly connecting the visitor to Carrara's stone-working traditions.",
-      "Verena Mayer Tasch's monumental marble leaf becomes a central point of encounter, while selected sculptures by Selene Frosini and Francesca Bernardini create a layered dialogue between the courtyard, cloisters and museum rooms.",
-      "Silvia Scaringella's installation is presented in dialogue with Yuri Ancarani's Il Capo, bringing two perspectives on Carrara into contact: industrial extraction and fragile ecosystems.",
-      "Anna Multone's works extend the collection's ongoing reflections on materiality, memory, transformation and everyday life."
+      "Resonant Matter brings together five women sculptors whose practices challenge the traditional notion of marble as a material to be conquered. Through distinct modes of listening, each artist enters into dialogue with stone, revealing sculpture as a relational act in which form emerges through negotiation among geological memory, human gesture, and place.",
+      "For centuries, marble has been framed through narratives of mastery, extraction, and control. Carrara itself has become synonymous with the triumph of human will over matter, a place where stone is cut and shaped.",
+      "Resonant Matter proposes an alternative reading.",
+      "Rather than treating marble as passive material, the exhibition approaches it as an active presence: a body of geological memory shaped by immense pressures, tectonic movement, and deep time. The stone is not empty matter awaiting intervention; it already contains histories, forces, and latent forms.",
+      "The exhibition shifts the understanding of sculpture from an act of domination to a process of listening. Form emerges not through imposition but through encounter. The artist becomes less a master of material and more a participant in a dialogue with it.",
+      "Bringing together five women sculptors, the exhibition does not treat femininity as identity, but as a mode of engagement: grounded in receptivity, transformation, continuity, and relational intelligence, a way of working forged at the margins of the sculptural canon and available to anyone.",
+      "The result is an exhibition that understands sculpture less as the production of objects than as a practice of listening."
     ]
   },
   artists: {
     label: "Artists",
     kicker: "Five Women Sculptors",
-    title: "Five women sculptors",
+    title: "Five modes of listening",
     body: [
-      "The exhibition brings together five women sculptors whose practices differ in language, technique, scale and aesthetic approach.",
-      "Verena Mayer Tasch works with marble as threshold and encounter. Selene Frosini develops a way of listening to fragment, surface and resistance.",
-      "Francesca Bernardini explores abstraction and organic form, extending shells, cocoons and protective inner spaces into contemporary sculpture.",
-      "Silvia Scaringella opens a dialogue between landscape, material and human intervention. Anna Multone connects sculpture with memory, transformation and everyday life.",
-      "Five ways of listening, five ways of revealing form."
+      "Verena Mayer Tasch - Growth & Nature",
+      "Verena Mayer Tasch carves the most short-lived of forms, the fallen leaf, in the most enduring of materials. Working in Carrara with a minimalist formal language, she treats plants as fellow living beings: born, growing, maturing, dying. Her marble leaves hold that cycle still at its final, quietest moment. Scattered on a ground of white marble chips, the leaves compose what the artist calls an intimate story about things that fall: an autumn made permanent, where loss and renewal share one form. Her listening is directed at time itself, at the slow rhythm by which everything that grows eventually returns to the ground, and at stone's capacity to keep that rhythm from disappearing.",
+      "Selene Frosini - Material Transformation",
+      "Selene Frosini works with marble fragments and discarded pieces, treating what remains after extraction as active material rather than waste, each offcut an inner landscape enclosed within matter. Her dispersed material islands trace the processes of cutting, carving, and transformation that shape Carrara. Installed throughout the cloister, five works create a scattered rhythm that invites visitors to move slowly, notice residues, and reflect on how form can emerge through care, touch, and reuse. Among them, a new work devoted to water asks to be viewed from above: instead of confronting a monument, the visitor leans over the sculpture as over a pool, a small choreography of attention in which listening becomes a bodily act.",
+      "Silvia Scaringella - Water & Living Systems",
+      "Silvia Scaringella listens to the small life that inhabits the landscape of extraction: water, insects, and the fragile ecosystems that persist alongside industry. Her installation is presented in dialogue with Yuri Ancarani's Il Capo, staging a meeting between two scales of Carrara: the choreography of machines commanding the mountain, and the quiet endurance of living systems. Immersed in the film's powerful quarry sound, the sculpture stands as a silent counterpoint. The visitor moves around it as the projection unfolds, passing between nature, industry, and material transformation.",
+      "Francesca Bernardini - Fragility & Memory",
+      "Francesca Bernardini's sculptures grow out of her long-running series of nests, cocoons, and chrysalises: protective envelopes where one develops and transforms in complete safety. Her most recent works are cocoons carved open: hollow interiors exposed, shelters that have already fulfilled their purpose, vulnerable containers shaped by absence. These are joined by earlier sculptures whose abstract, organic language enters into direct dialogue with the historical collection, extending a sculptural research that the museum's own display began decades ago, and emphasizing listening, shelter, and emergence from within.",
+      "Anna Multone - Craft & Everyday Ritual",
+      "Anna Multone reinterprets the inherited domestic objects of Walser culture, carving them entirely in marble, a material historically foreign to that world of wood and handwork. A cradle built with traditional interlocking techniques rests directly on the floor, gently rocking when touched; beside it, a marble loom holds the memory of weaving, the slow domestic craft at the heart of Walser life. Placed in dialogue with the contemporary collection in Sala I, her works show how memory is stored in ordinary things: marble replaces wood, permanence replaces utility, and everyday ritual becomes sculpture, a listening directed at gestures repeated across generations, now held still in stone."
     ]
   },
   team: {
@@ -721,8 +735,12 @@ export default function ExhibitionPage() {
         <p className="section-kicker">Interactive route</p>
         <h1 id="route-title">RESONANT MATTER</h1>
         <p>
-          Listening and dialogue revealing form. Find each intervention by floor
-          and room while following marble as memory, pressure and transformation.
+          Resonant Matter brings together five women sculptors whose practices
+          challenge the traditional notion of marble as a material to be
+          conquered. Through distinct modes of listening, each artist enters
+          into dialogue with stone, revealing sculpture as a relational act in
+          which form emerges through negotiation among geological memory,
+          human gesture, and place.
         </p>
       </section>
 

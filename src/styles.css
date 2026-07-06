@@ -595,13 +595,9 @@ a {
 }
 
 .floor-plan-image--ground {
-  top: -28.2%;
-  left: -12.5%;
-  width: 125%;
-}
-
-.floor-plan-layer--ground .map-marker {
-  top: calc(var(--y) - 5%);
+  top: -22%;
+  left: -10%;
+  width: 120%;
 }
 
 .floor-plan-image--first {
