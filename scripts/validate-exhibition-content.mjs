@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
 const page = readFileSync(resolve(root, "src/ExhibitionPage.jsx"), "utf8");
+const scene = readFileSync(resolve(root, "src/Scene.jsx"), "utf8");
 const sculpture = readFileSync(resolve(root, "src/GreekSculpture.jsx"), "utf8");
 const styles = readFileSync(resolve(root, "src/styles.css"), "utf8");
 
@@ -49,8 +50,36 @@ if (page.includes("year:") || page.includes("work.year")) {
   throw new Error("Exhibition page still contains artwork year data");
 }
 
-if (!sculpture.includes("models/lattice_in_stone.glb")) {
-  throw new Error("Landing scene is not using the supplied lattice sculpture model");
+if (!scene.includes("GreekSculpture")) {
+  throw new Error("Landing scene is missing the restored classical sculpture");
+}
+
+if (!scene.includes("<CameraTransition active={isEntering} targetRef={sculptureRef} />")) {
+  throw new Error("Landing scene is missing the sculpture zoom transition");
+}
+
+if (
+  !sculpture.includes("models/lattice_in_stone.glb") ||
+  sculpture.includes("useModelAvailable") ||
+  sculpture.includes("PlaceholderSculpture") ||
+  !sculpture.includes("<LoadedSculpture />")
+) {
+  throw new Error("Landing scene still flashes the temporary sculpture before the final model");
+}
+
+if ((page.match(/href=\{import\.meta\.env\.BASE_URL\}/g) ?? []).length !== 2) {
+  throw new Error("MudaC and Intro links do not return to the GitHub Pages project root");
+}
+
+for (const [id, x] of [
+  ["g4", 38],
+  ["g5", 47],
+  ["g6", 56],
+  ["g7", 65]
+]) {
+  if (!new RegExp(`id: "${id}"[\\s\\S]*?x: ${x},[\\s\\S]*?y: 8\\.5,`).test(page)) {
+    throw new Error(`Ground-floor marker ${id} is not centered clear of the upper wall`);
+  }
 }
 
 if (!/id: "f7"[\s\S]*?x: 50,[\s\S]*?y: 64\.5,/.test(page)) {
@@ -72,8 +101,14 @@ if (!/\.work-detail-panel\s*\{[\s\S]*?border-radius: 22px;/.test(styles)) {
   throw new Error("Artwork detail panel does not use the approved rounded corners");
 }
 
-if (!/\.map-marker\s*\{[^}]*width: clamp\(22px, 1\.8vw, 26px\);[^}]*height: clamp\(22px, 1\.8vw, 26px\);/.test(styles)) {
+if (!/\.map-marker\s*\{[^}]*width: clamp\(20px, 1\.6vw, 24px\);[^}]*height: clamp\(20px, 1\.6vw, 24px\);/.test(styles)) {
   throw new Error("Map markers are not using the approved compact desktop size");
+}
+
+if (
+  !/\.museum-ui--dark \.enter-button\s*\{[^}]*background: rgba\(255, 255, 255, 0\.12\);[^}]*backdrop-filter: blur\(18px\) saturate\(1\.2\);/.test(styles)
+) {
+  throw new Error("Landing entry button is not using the approved frosted-glass style");
 }
 
 if (
@@ -87,6 +122,13 @@ if (
 
 if (!/\.map-shell\s*\{[^}]*width: 100%;/.test(styles)) {
   throw new Error("Map shell can collapse to zero width in desktop Chrome");
+}
+
+if (
+  !/\.floor-plan-image--ground\s*\{[^}]*top: -28\.2%;[^}]*left: -12\.5%;[^}]*width: 125%;/.test(styles) ||
+  !/\.floor-plan-layer--ground \.map-marker\s*\{[^}]*top: calc\(var\(--y\) - 5%\);/.test(styles)
+) {
+  throw new Error("Ground-floor plan can be cropped at the bottom on desktop");
 }
 
 if (

@@ -87,8 +87,8 @@ const floors = {
         title: "Forms from Within II",
         material: "Abstract organic sculpture",
         room: "North gallery",
-        x: 30.6,
-        y: 10.5,
+        x: 38,
+        y: 8.5,
         images: [artworkImage("ground", 4)]
       },
       {
@@ -98,8 +98,8 @@ const floors = {
         title: "Material Memory",
         material: "Stone form and sculptural fragments",
         room: "North gallery",
-        x: 41.9,
-        y: 10.5,
+        x: 47,
+        y: 8.5,
         images: [artworkImage("ground", 5)]
       },
       {
@@ -109,8 +109,8 @@ const floors = {
         title: "Relational Form",
         material: "Sculptural form and domestic structure",
         room: "North gallery",
-        x: 54,
-        y: 10.5,
+        x: 56,
+        y: 8.5,
         images: [artworkImage("ground", 6)]
       },
       {
@@ -120,8 +120,8 @@ const floors = {
         title: "Stone Body",
         material: "Dark stone study",
         room: "North gallery",
-        x: 63.5,
-        y: 10.5,
+        x: 65,
+        y: 8.5,
         images: [artworkImage("ground", 7)]
       },
       {
@@ -700,13 +700,13 @@ export default function ExhibitionPage() {
         <div className="utility-row" aria-label="Site tools">
           <span>Italiano</span>
           <span>Accessibilità</span>
-          <a href="/" aria-label="Return to the marble intro">
+          <a href={import.meta.env.BASE_URL} aria-label="Return to the exhibition intro">
             Intro
           </a>
         </div>
 
         <div className="brand-row">
-          <a className="brand" href="/" aria-label="Return to landing page">
+          <a className="brand" href={import.meta.env.BASE_URL} aria-label="Return to landing page">
             <span>Museo delle Arti Carrara</span>
             <strong>mudaC</strong>
           </a>

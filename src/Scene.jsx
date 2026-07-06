@@ -10,18 +10,15 @@ function CameraTransition({ active, targetRef }) {
   const timelineRef = useRef(null);
 
   useFrame(() => {
-    if (!active) {
-      camera.lookAt(0, 0.08, 0);
-    }
+    if (!active) camera.lookAt(0, 0.08, 0);
   });
 
   useEffect(() => {
     if (!active) return undefined;
 
     timelineRef.current?.kill();
-    timelineRef.current = gsap.timeline();
-
-    timelineRef.current
+    timelineRef.current = gsap
+      .timeline()
       .to(
         targetRef.current?.rotation ?? {},
         {
@@ -74,13 +71,8 @@ function CursorLight() {
 
   useEffect(() => {
     scene.add(target);
-    if (spotRef.current) {
-      spotRef.current.target = target;
-    }
-
-    return () => {
-      scene.remove(target);
-    };
+    if (spotRef.current) spotRef.current.target = target;
+    return () => scene.remove(target);
   }, [scene, target]);
 
   useFrame(({ pointer }) => {
@@ -96,7 +88,10 @@ function CursorLight() {
     }
 
     if (pointRef.current) {
-      pointRef.current.position.lerp(new THREE.Vector3(x * 2.4, 0.9 + y * 1.2, 1.6), 0.12);
+      pointRef.current.position.lerp(
+        new THREE.Vector3(x * 2.4, 0.9 + y * 1.2, 1.6),
+        0.12
+      );
     }
   });
 
@@ -115,7 +110,13 @@ function CursorLight() {
         shadow-mapSize-height={2048}
         shadow-bias={-0.00012}
       />
-      <pointLight ref={pointRef} position={[-1.2, 1.1, 1.8]} intensity={0.82} distance={4.2} color="#8fb7ff" />
+      <pointLight
+        ref={pointRef}
+        position={[-1.2, 1.1, 1.8]}
+        intensity={0.82}
+        distance={4.2}
+        color="#8fb7ff"
+      />
       <directionalLight position={[-2.6, 2.8, 2.4]} intensity={0.78} color="#d9d1c4" />
       <directionalLight position={[3.4, 1.8, -1.8]} intensity={0.42} color="#7f9ad4" />
     </>
@@ -155,18 +156,14 @@ function SceneContent({ isEntering, onEnter }) {
     <>
       <PerspectiveCamera makeDefault position={[0, 0.46, 5.45]} fov={33} />
       <CameraTransition active={isEntering} targetRef={sculptureRef} />
-
       <color attach="background" args={["#020202"]} />
       <fog attach="fog" args={["#020202", 4.2, 9.4]} />
-
       <ambientLight intensity={0.035} />
       <hemisphereLight args={["#24324a", "#050302", 0.18]} />
       <CursorLight />
 
       <Suspense fallback={null}>
         <Environment preset="night" environmentIntensity={0.24} />
-      </Suspense>
-      <Suspense fallback={null}>
         <GreekSculpture ref={sculptureRef} isEntering={isEntering} onEnter={onEnter} />
         <DustField />
       </Suspense>
@@ -217,7 +214,7 @@ export default function Scene({ isEntering, onEnter }) {
     <section
       ref={shellRef}
       className="scene-shell scene-shell--dark"
-      aria-label="Interactive marble sculpture scene"
+      aria-label="Resonant Matter exhibition intro"
       onPointerMove={updateSpot}
       onPointerLeave={() => {
         shellRef.current?.style.setProperty("--spot-x", "50%");
