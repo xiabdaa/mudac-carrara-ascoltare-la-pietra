@@ -344,7 +344,7 @@ function FloorMap({ floor, selectedId, onSelect }) {
 
           {floor.works.map((work) => (
             <button
-              className={`map-marker${work.added ? " map-marker--added" : ""}`}
+              className={`map-marker${work.number >= 10 ? " map-marker--double-digit" : ""}${work.added ? " map-marker--added" : ""}`}
               type="button"
               aria-pressed={selectedId === work.id}
               aria-label={`${work.number}. ${work.artist}, ${work.title}, ${work.room}`}

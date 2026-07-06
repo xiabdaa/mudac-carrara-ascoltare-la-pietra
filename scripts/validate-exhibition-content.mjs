@@ -106,6 +106,14 @@ if (!/\.map-marker\s*\{[^}]*width: clamp\(20px, 1\.6vw, 24px\);[^}]*height: clam
 }
 
 if (
+  !page.includes("map-marker--double-digit") ||
+  !/\.map-marker span\s*\{[^}]*display: grid;[^}]*place-items: center;[^}]*font-variant-numeric: tabular-nums;[^}]*line-height: 1;/.test(styles) ||
+  !/\.map-marker--double-digit span\s*\{[^}]*letter-spacing: -0\.06em;/.test(styles)
+) {
+  throw new Error("Double-digit map labels are not optically centered");
+}
+
+if (
   !/\.museum-ui--dark \.enter-button\s*\{[^}]*background: rgba\(255, 255, 255, 0\.12\);[^}]*backdrop-filter: blur\(18px\) saturate\(1\.2\);/.test(styles)
 ) {
   throw new Error("Landing entry button is not using the approved frosted-glass style");
